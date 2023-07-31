@@ -1,0 +1,40 @@
+form {
+    margin: 0px
+}
+
+p {
+    margin: 0px
+}
+
+question {
+    color: red
+}
+
+textarea {
+    width: 550px;
+    height: 500px;
+    position: relative;
+    background: transparent;
+    resize: none;
+    overflow: hidden;
+    border: 2px solid rgb(0, 128, 0);
+    outline: none;
+}
+
+result {
+    position: absolute;
+    line-height: 1.2;
+    font-size: 12px;
+    /*color: transparent;*/
+    white-space: pre-wrap;
+    text-align: left;
+    overflow: hidden;
+}
+
+#msg {
+    color: red;
+}
+
+strong {
+    background: rgb(219, 82, 82);
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> Programming8</title>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <script src="../kadai.js"></script>
+    <script src="../extra.js"></script>
+</head>
+
+<body>
+    <h1>プログラミングA演習第8回</h1>
+    <details>
+        <summary>課題1(クリックして表示)</summary>
+        問題(pae0801-unfinished.c):
+        <p>複数個の町の情報がプログラムの4行目にある構造体「town」に格納されている。</p>
+        <p>条件に沿って、人口密度が最も大きい町の情報を実行例のように表示するプログラムを作成せよ</p>
+        -------------------------------------------------------------------------------
+        <br>条件と実行例:
+        <input value="実行例" onclick="clickEvent1()" type="button">
+        <li>条件1:関数getDensは構造体を引数とし、人口密度を戻り値とする</li>
+        <li>条件2:関数printTownは構造体を引数とし、面積・人口・人口密度・名前を実行例のように表示するようにする</li>
+        <li>条件3:mainでは構造体の要素についてgetDensで人口密度を求め、最大の町が見つかったらprintTownを呼び出し情報を表示すること</li>
+        <!--<li>条件4:格納されている町の数が増えても利用できるプログラムを作ること</li>-->
+        -------------------------------------------------------------------------------
+        <br>
+        <form name="form">
+            <textarea name="text" cols="50" rows="20"></textarea>
+            <result id="result"></result>
+            <p><input value="比較" onclick="clickEvent3()" type="button"></p>
+        </form>
+        <p><span id="msg"></span></p>
+    </details>
+
+    <details>
+        <summary>課題2(クリックして表示)</summary>
+        <input value="実行例" onclick="clickEvent2()" type="button">
+    </details>
+
+    <details>
+        <summary>課題3(クリックして表示)</summary>
+    </details>
+    -------------------------------------------------------------------------------
+    <footer>
+        <a href="kadai8.zip">コード配布</a>
+        <br>
+        <a href=javascript:Answer();>回答例と解説</a>
+    </footer>
+</body>
+
+</html>
