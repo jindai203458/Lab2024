@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> Answer</title>
+    <meta property="og:title" content="website">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h1>回答例とその解説</h1>
+    </header>
+    <answer>
+        <code>
+        <p>#include "stdio.h"</p>
+        <p>int kaijou(int n) {</p>
+        <p>int r;</p>
+        <p>printf("開始 n=%d\n", n);</p>
+        <p>if (n == 1) {</p>
+        <p>r = 1;</p>
+        <p>} else {</p>
+        <p>r = n * kaijou(n - 1);</p>
+        <p>}</p>
+        <p>printf("終了 n=%d, r=%d\n", n, r);</p>
+        <p>return r;</p>
+        <p>}</p>
+
+        <br><p>int main(void) {</p>
+        <p>int x, k;</p>
+
+        <p>printf("nを入力: ");</p>
+        <p>scanf("%d", &x);</p>
+        <p>k = kaijou(x);</p>
+        <p>printf("%dの階乗は%d\n", x, k);</p>
+        <p>return 0;</p>
+        }
+        </code>
+    </answer>
+
+</body>
+
+</html>

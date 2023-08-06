@@ -15,3 +15,15 @@ function Plus(textarea) {
     }
     return wordhouse;
 }
+
+//回答開示時間を調整する
+function Answer() {
+    now = new Date();
+    month = now.getMonth() + 1;
+    hour = now.getHours();
+    if ((month >= 4) && (hour >= 0)) {
+        window.open('answer.html', '_brank', 'noreferrer');
+    } else {
+        alert('現時刻では表示できません')
+    }
+}

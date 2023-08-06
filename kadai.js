@@ -62,22 +62,25 @@ function clickEvent3() {
 
         for (var ansi = 0; ansi < textarea.length || ansi < answer.length; ansi++) {
             answer[ansi] = (String(answer[ansi])).replace(/\s+/g, "");
-            if (getarea == answer[ansi]) {
+            if (getarea == answer[ansi] && (-1 <= i - ansi && i - ansi <= 1)) {
                 Emphasis[i] = Plus(textarea[i]);
                 break;
             } else if (getarea != answer[ansi] && (ansi == (textarea.length - 1) || ansi == (answer.length - 1))) {
                 textarea[i] = Plus(textarea[i]);
                 Emphasis[i] = '<strong>' + textarea[i] + '</strong>';
-
                 put[i2] = (i + 1) + '行:' + textarea[i];
 
-                /*1文字ずつ読み込んでいきたい*/
-                if (getarea == 'return;') { //これだとreturnに一致しないと特殊な表示ができないのが問題
-                    put[i2] = (i + 1) + '行:' + textarea[i] + '//返り値がありません'
+                /*1文字ずつ読み込んでいく。return0;ならreturnまで読み込んだ後に次があっているか。存在しているか考えるといいかもしれない*/
+                var phrase = getarea.split("");
+                var dio = '';
+                for (var phrasei = 0; phrasei < phrase.length; phrasei++) {
+                    dio = dio + phrase[phrasei];
+                    if (dio == 'return;') {
+                        put[i2] = (i + 1) + '行:' + textarea[i] + '//返り値がありません'
+                        break;
+                    }
                 }
-                else if (getarea == 'int i,mi;') { //これだとint型にしか適用できないのが問題。雑
-                    put[i2] = (i + 1) + '行:' + textarea[i] + '//初期値がありません'
-                }
+
                 i2++;
                 break;
             }
@@ -88,16 +91,4 @@ function clickEvent3() {
     //CSSで間違っている箇所を赤く強調する
     result.innerHTML = Emphasis.join("<br>");
     msg.innerHTML = put.join("<br>");
-}
-
-//回答開示時間を調整する
-function Answer() {
-    now = new Date();
-    month = now.getMonth() + 1;
-    hour = now.getHours();
-    if ((month >= 4) && (hour >= 0)) {
-        window.open('answer.html', '_brank', 'noreferrer');
-    } else {
-        alert('現時刻では表示できません')
-    }
 }
