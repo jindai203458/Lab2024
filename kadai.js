@@ -70,14 +70,16 @@ function clickEvent3() {
                 Emphasis[i] = '<strong>' + textarea[i] + '</strong>';
                 put[i2] = (i + 1) + '行:' + textarea[i];
 
-                /*1文字ずつ読み込んでいく。return0;ならreturnまで読み込んだ後に次があっているか。存在しているか考えるといいかもしれない*/
+                /*1文字ずつ読み込んでいく。return0;ならreturnまで読み込んだ後に次があっているか、存在してるか*/
                 var phrase = getarea.split("");
-                var dio = '';
+                var duo = '';
                 for (var phrasei = 0; phrasei < phrase.length; phrasei++) {
-                    dio = dio + phrase[phrasei];
-                    if (dio == 'return;') {
-                        put[i2] = (i + 1) + '行:' + textarea[i] + '//返り値がありません'
-                        break;
+                    duo = duo + phrase[phrasei];
+                    if (duo == 'return') {
+                        if (phrase[phrasei + 1] == '' || phrase[phrasei + 1] == ';') {
+                            put[i2] = (i + 1) + '行:' + textarea[i] + '//返り値がありません'
+                            break;
+                        }
                     }
                 }
 
