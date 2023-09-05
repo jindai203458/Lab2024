@@ -31,5 +31,5 @@ int main(void) {
     }
   }
   printTown(list[mi]);
-  return ;
+  return a;
 }
